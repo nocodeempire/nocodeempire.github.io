@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="MongodbDBA 为什么选择 MongoDb？ 学习成本较低 和 Node.js 结合最好，对 JavaScript 兼容较好  参考链接： https://www.mongodb.com/ https://www.mongodb.com/cn 参考教程：http://www.runoob.com/mongodb/mongodb-tutorial.html  介绍 非关系型数据库 不需要提前设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mongodb">
+<meta property="og:url" content="http://yoursite.com/2015/08/17/03-mongodb/index.html">
+<meta property="og:site_name" content="One_Two_One">
+<meta property="og:description" content="MongodbDBA 为什么选择 MongoDb？ 学习成本较低 和 Node.js 结合最好，对 JavaScript 兼容较好  参考链接： https://www.mongodb.com/ https://www.mongodb.com/cn 参考教程：http://www.runoob.com/mongodb/mongodb-tutorial.html  介绍 非关系型数据库 不需要提前设">
+<meta property="og:updated_time" content="2017-07-30T04:37:22.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mongodb">
+<meta name="twitter:description" content="MongodbDBA 为什么选择 MongoDb？ 学习成本较低 和 Node.js 结合最好，对 JavaScript 兼容较好  参考链接： https://www.mongodb.com/ https://www.mongodb.com/cn 参考教程：http://www.runoob.com/mongodb/mongodb-tutorial.html  介绍 非关系型数据库 不需要提前设">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/08/17/03-mongodb/"/>
+
+
+
+
+
+  <title>Mongodb | One_Two_One</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One_Two_One</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/17/03-mongodb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One_Two_One">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mongodb</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-17T22:48:51+08:00">
+                2015-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h1><p>DBA</p>
+<h2 id="为什么选择-MongoDb？"><a href="#为什么选择-MongoDb？" class="headerlink" title="为什么选择 MongoDb？"></a>为什么选择 MongoDb？</h2><ul>
+<li>学习成本较低</li>
+<li>和 Node.js 结合最好，对 JavaScript 兼容较好</li>
+</ul>
+<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><ul>
+<li><a href="https://www.mongodb.com/" target="_blank" rel="external">https://www.mongodb.com/</a></li>
+<li><a href="https://www.mongodb.com/cn" target="_blank" rel="external">https://www.mongodb.com/cn</a></li>
+<li>参考教程：<a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">http://www.runoob.com/mongodb/mongodb-tutorial.html</a></li>
+</ul>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>非关系型数据库<ul>
+<li>不需要提前设计表结构</li>
+<li>最大的好处就是非常灵活</li>
+<li>存储的是 json 数据</li>
+<li>非关系型数据库也有很多，其中 MongoDB 就是佼佼者</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>关系型数据库<ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>DB2</li>
+<li>Microsoft SqlServer</li>
+<li>所有关系型数据库都差不多</li>
+<li>都是表、关系、表中的字段数据，表与表之间的关系</li>
+<li>共同点：必须先有表结构才可以操作这个表</li>
+<li>而且如果随着业务场景的不断演变，你会发现表需要频繁的去修改</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>注意：官方不再支持32位版本了</li>
+<li>步骤：<ul>
+<li>下载双击安装</li>
+<li>配置环境变量：C:\Program Files\MongoDB\Server\3.4\bin</li>
+<li>安装完毕后，在命令行输入 <code>mongo --version</code> 来查看是否安装成功</li>
+</ul>
+</li>
+</ul>
+<h2 id="启动数据库服务、连接访问数据库"><a href="#启动数据库服务、连接访问数据库" class="headerlink" title="启动数据库服务、连接访问数据库"></a>启动数据库服务、连接访问数据库</h2><h3 id="启动数据库服务"><a href="#启动数据库服务" class="headerlink" title="启动数据库服务"></a>启动数据库服务</h3><ol>
+<li>创建目录 <code>c:\data\db\</code> <ul>
+<li>在启动的时候，可以通过 <code>--dbpath</code> 指定数据服务存储数据的目录</li>
+</ul>
+</li>
+<li>在命令行输入 <code>mongod</code> 启动服务</li>
+<li>停止服务：按 control + c，不要直接通过关闭 cmd 窗口的方式来关闭</li>
+</ol>
+<h3 id="提示：如果不加-dbpath-mongod-会自动使用-执行命令所属磁盘根目录-data-db-目录作为自己的数据存储路径，"><a href="#提示：如果不加-dbpath-mongod-会自动使用-执行命令所属磁盘根目录-data-db-目录作为自己的数据存储路径，" class="headerlink" title="提示：如果不加 --dbpath, mongod 会自动使用 执行命令所属磁盘根目录/data/db 目录作为自己的数据存储路径，"></a>提示：如果不加 <code>--dbpath</code>, mongod 会自动使用 <code>执行命令所属磁盘根目录/data/db</code> 目录作为自己的数据存储路径，</h3><p>所以，如果当前磁盘已经有了 <code>磁盘根路径\data\db</code> 目录了，可以省略 <code>--dbpath</code>。</p>
+<h3 id="执行完上面的命令并成功开启-MongoDB-数据服务实例之后，就把该控制台最小化到一边就可以了，"><a href="#执行完上面的命令并成功开启-MongoDB-数据服务实例之后，就把该控制台最小化到一边就可以了，" class="headerlink" title="执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，"></a>执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，</h3><p>千万不要关闭，否则关闭终端就是关闭数据库了，</p>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><ol>
+<li>再打开一个 cmd 窗口</li>
+<li>通过 mongo 命令连接数据库服务器</li>
+<li>mongo 命令默认去连接本机上的 MongoDB 服务实例：<code>127.0.0.1:27017</code></li>
+<li>可以通过下面的命令，指定连接的主机名和端口号：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --host 127.0.0.1 --port 27017</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="提示：如果提示-“无法连接主机”，请检查你的-MongoDB-数据服务实例是否开启。"><a href="#提示：如果提示-“无法连接主机”，请检查你的-MongoDB-数据服务实例是否开启。" class="headerlink" title="提示：如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。"></a>提示：如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。</h3><h2 id="MongoDB-数据存储结构"><a href="#MongoDB-数据存储结构" class="headerlink" title="MongoDB 数据存储结构"></a>MongoDB 数据存储结构</h2><ul>
+<li>传统的关系型数据库中存储结构<ul>
+<li>一个机器上安装数据库其实就是安装了一个数据服务实例</li>
+<li>一个数据服务实例上可以有多个数据库<ul>
+<li>a 网站的用户</li>
+<li>b 网站的用户</li>
+<li>a 网站的用户表、b 网站的用户表</li>
+</ul>
+</li>
+<li>一个数据库中可以有多张表</li>
+<li>一张表中可以存储多条记录数据</li>
+</ul>
+</li>
+<li>数据服务实例 -&gt; 数据库 -&gt; 表 -&gt; 记录</li>
+</ul>
+<ul>
+<li>在一个数据服务中可以有多个数据库</li>
+<li>在一个数据库中可以有多个集合<ul>
+<li>在 MongoDB 中，把表称之为集合</li>
+<li>集合简单理解就是一个数组</li>
+</ul>
+</li>
+<li>在一个集合中可以有多个对象（json）（在mongodb 中称之为文档）,是一个特殊的 json 对象<ul>
+<li>称之为 bson</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  a: &#123; </div><div class="line">    users: [</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;,</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      ...</div><div class="line">    ],</div><div class="line">    articles: [</div><div class="line">      &#123; title: 'xxx', content: '', time: '' &#125;,</div><div class="line">      &#123; title: 'xxx', content: '', time: '' &#125;,</div><div class="line">      &#123; title: 'xxx', content: '', time: '' &#125;,</div><div class="line">      &#123; title: 'xxx', content: '', time: '' &#125;,</div><div class="line">      &#123; title: 'xxx', content: '', time: '' &#125;,</div><div class="line">      ...</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  b: &#123; </div><div class="line">    users: [</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;,</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      &#123; username: 'xxx', password: 'xxx', age: 'xxx', gender: 'xx' &#125;</div><div class="line">      ...</div><div class="line">    ],</div><div class="line">  &#125;,</div><div class="line">  c: &#123;  &#125;</div><div class="line">&#125;</div><div class="line">a 数据库</div><div class="line">   用户数据：用户集合[]</div><div class="line">   文章数据：文章集合[]</div><div class="line">   评论数据：评论集合[]</div><div class="line">   商品数据：商品集合[]</div><div class="line">   订单数据：订单集合[]</div><div class="line"></div><div class="line">b 数据库</div><div class="line"></div><div class="line">c 数据库</div></pre></td></tr></table></figure>
+<h2 id="基本操作命令"><a href="#基本操作命令" class="headerlink" title="基本操作命令"></a>基本操作命令</h2><ul>
+<li><p><code>show dbs</code></p>
+<ul>
+<li>查看当前服务实例上所有的数据库</li>
+</ul>
+</li>
+<li><p><code>use 数据库名称</code></p>
+<ul>
+<li>这个命令表示切换到指定的数据库</li>
+<li>如果没有，也不会创建</li>
+<li>如果已经有了，则表示切换到这个数据库对该数据库进行操作</li>
+<li>连接到数据库之后，默认有一个变量叫做：db，终端默认把 db 赋值给了 test</li>
+</ul>
+</li>
+<li><p><code>db</code></p>
+<ul>
+<li>查看当前所处的数据库</li>
+</ul>
+</li>
+<li><p><code>db.集合名称.insert(数据文档)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; db.news.insert(&#123;id:1, title:&quot;news title&quot;, url:&quot;http://www.baidu.com&quot;, text:&quot;百度一下，你就知道&quot;&#125;);</div><div class="line"></div><div class="line">&gt; db.news.insert(&#123;id:2, title:&quot;news title&quot;, url:&quot;http://www.baidu.com&quot;, text:&quot;百度一下，你就知道2&quot;&#125;);</div><div class="line"></div><div class="line">&gt; db.news.insert(&#123;id:3, title:&quot;news title&quot;, url:&quot;http://www.baidu.com&quot;, text:&quot;百度一下，你就知道3&quot;&#125;);</div><div class="line"></div><div class="line">&gt; db.news.insert(&#123;id:4, title:&quot;news title&quot;, url:&quot;http://www.baidu.com&quot;, text:&quot;百度一下，你就知道4&quot;&#125;);</div><div class="line"></div><div class="line">&gt; db.news.insert(&#123;id:5, title:&quot;news title&quot;, url:&quot;http://www.baidu.com&quot;, text:&quot;百度一下，你就知道5&quot;&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>show collections</code></p>
+<ul>
+<li>查看当前数据库中所有的集合</li>
+</ul>
+</li>
+<li><p><code>db.集合名称.find()</code></p>
+<ul>
+<li>查询指定集合中所有的数据</li>
+<li>可以通过 <code>db.集合名称.find().pretty()</code> 美化输出格式</li>
+<li>默认是查询所有，可以通过：<code>db.集合名称.find({查询条件})</code> 按条件查询集合中的数据</li>
+</ul>
+</li>
+<li><p><code>db.集合名称.update({更新条件}, {$set: {要更新的字段}})</code></p>
+<ul>
+<li>更新指定集合数据</li>
+</ul>
+</li>
+<li><p><code>db.集合名称.remove({删除条件})</code></p>
+<ul>
+<li>删除指定集合中的数据</li>
+</ul>
+</li>
+<li><p>参考文档：<a href="https://docs.mongodb.com/manual/crud/" target="_blank" rel="external">https://docs.mongodb.com/manual/crud/</a></p>
+</li>
+</ul>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><hr>
+<h3 id="使用-MongoDB-官方提供的-mongodb-驱动包操作-MongoDB-数据库"><a href="#使用-MongoDB-官方提供的-mongodb-驱动包操作-MongoDB-数据库" class="headerlink" title="使用 MongoDB 官方提供的 mongodb 驱动包操作 MongoDB 数据库"></a>使用 MongoDB 官方提供的 mongodb 驱动包操作 MongoDB 数据库</h3><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongodb --save</div></pre></td></tr></table></figure>
+<p>CRUD：</p>
+<p>参考文档：</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/mongodb#connecting-to-mongodb" target="_blank" rel="external">https://www.npmjs.com/package/mongodb#connecting-to-mongodb</a></li>
+<li><a href="http://mongodb.github.io/node-mongodb-native/2.2/" target="_blank" rel="external">http://mongodb.github.io/node-mongodb-native/2.2/</a></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongodb = <span class="built_in">require</span>(<span class="string">'mongodb'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 连接路径URL</span></div><div class="line"><span class="keyword">var</span> url = <span class="string">'mongodb://localhost:27017/itcast'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> MongoClient = mongodb.MongoClient</div><div class="line"></div><div class="line"><span class="comment">// ================== 插入数据 ==================</span></div><div class="line"><span class="comment">// 1. 连接数据库（打开冰箱门）</span></div><div class="line"><span class="comment">// MongoClient.connect(url, function (err, db) &#123;</span></div><div class="line"><span class="comment">//   if (err) &#123;</span></div><div class="line"><span class="comment">//     throw new Error('连接失败')</span></div><div class="line"><span class="comment">//   &#125;</span></div><div class="line"></div><div class="line"><span class="comment">//   // 2. 把大象放到冰箱</span></div><div class="line"><span class="comment">//   db</span></div><div class="line"><span class="comment">//     .collection('heros')</span></div><div class="line"><span class="comment">//     .insert(&#123; name: '张飞', gender: '男', age: 23 &#125;, function (err, result) &#123;</span></div><div class="line"><span class="comment">//       if (err) &#123;</span></div><div class="line"><span class="comment">//         throw new Error('插入数据失败')</span></div><div class="line"><span class="comment">//       &#125;</span></div><div class="line"><span class="comment">//       console.log(result)</span></div><div class="line"></div><div class="line"><span class="comment">//       // 3. 关上冰箱门</span></div><div class="line"><span class="comment">//       db.close()</span></div><div class="line"><span class="comment">//     &#125;)</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// ================== /插入数据 ==================</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// ================== 查询数据 ==================</span></div><div class="line"><span class="comment">// MongoClient.connect(url, function (err, db) &#123;</span></div><div class="line"><span class="comment">//   if (err) &#123;</span></div><div class="line"><span class="comment">//     throw new Error('连接失败')</span></div><div class="line"><span class="comment">//   &#125;</span></div><div class="line"></div><div class="line"><span class="comment">//   // 查询所有</span></div><div class="line"><span class="comment">//   // db.collection('heros').find(&#123;&#125;).toArray(function (err, docs) &#123;</span></div><div class="line"><span class="comment">//   //   if (err) &#123;</span></div><div class="line"><span class="comment">//   //     throw new Error('查询数据失败')</span></div><div class="line"><span class="comment">//   //   &#125;</span></div><div class="line"><span class="comment">//   //   console.log(docs)</span></div><div class="line"><span class="comment">//   // &#125;)</span></div><div class="line"></div><div class="line"><span class="comment">//   // 按条件查询</span></div><div class="line"><span class="comment">//   db.collection('heros').find(&#123;name: '张飞'&#125;).toArray(function (err, docs) &#123;</span></div><div class="line"><span class="comment">//     if (err) &#123;</span></div><div class="line"><span class="comment">//       throw new Error('查询数据失败')</span></div><div class="line"><span class="comment">//     &#125;</span></div><div class="line"><span class="comment">//     console.log(docs)</span></div><div class="line"><span class="comment">//   &#125;)</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// ================== /查询数据 ==================</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// ================== 更新数据 ==================</span></div><div class="line"><span class="comment">// MongoClient.connect(url, function (err, db) &#123;</span></div><div class="line"><span class="comment">//   if (err) &#123;</span></div><div class="line"><span class="comment">//     throw new Error('连接失败')</span></div><div class="line"><span class="comment">//   &#125;</span></div><div class="line"><span class="comment">//   db.collection('heros').updateOne(&#123;name: '张飞'&#125;, &#123;</span></div><div class="line"><span class="comment">//     $set: &#123;</span></div><div class="line"><span class="comment">//       age: 20</span></div><div class="line"><span class="comment">//     &#125;</span></div><div class="line"><span class="comment">//   &#125;, function (err, result) &#123;</span></div><div class="line"><span class="comment">//     if (err) &#123;</span></div><div class="line"><span class="comment">//       throw new Error('更新失败')</span></div><div class="line"><span class="comment">//     &#125;</span></div><div class="line"><span class="comment">//     console.log(result)</span></div><div class="line"><span class="comment">//   &#125;)</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// ================== /更新数据 ==================</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// ================== 删除数据 ==================</span></div><div class="line"><span class="comment">// MongoClient.connect(url, function (err, db) &#123;</span></div><div class="line"><span class="comment">//   if (err) &#123;</span></div><div class="line"><span class="comment">//     throw new Error('连接失败')</span></div><div class="line"><span class="comment">//   &#125;</span></div><div class="line"><span class="comment">//   db.collection('heros').deleteOne(&#123;name: '张飞'&#125;, function (err, result) &#123;</span></div><div class="line"><span class="comment">//     if (err) &#123;</span></div><div class="line"><span class="comment">//       throw new Error('删除失败')</span></div><div class="line"><span class="comment">//     &#125;</span></div><div class="line"><span class="comment">//     console.log(result)</span></div><div class="line"><span class="comment">//   &#125;)</span></div><div class="line"><span class="comment">// &#125;)</span></div><div class="line"><span class="comment">// ================== /删除数据 ==================</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/27/09-网页端的相对路径和绝对路径/" rel="next" title="相对路径和绝对路径">
+                <i class="fa fa-chevron-left"></i> 相对路径和绝对路径
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/09/02-HackerNews模块化改造/" rel="prev" title="HackerNews 代码模块化">
+                HackerNews 代码模块化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Tang" />
+          <p class="site-author-name" itemprop="name">Tang</p>
+           
+              <p class="site-description motion-element" itemprop="description">不管多痛,也要咧着嘴放肆的笑</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mongodb"><span class="nav-number">1.</span> <span class="nav-text">Mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么选择-MongoDb？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么选择 MongoDb？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接："><span class="nav-number">1.2.</span> <span class="nav-text">参考链接：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.3.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动数据库服务、连接访问数据库"><span class="nav-number">1.5.</span> <span class="nav-text">启动数据库服务、连接访问数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动数据库服务"><span class="nav-number">1.5.1.</span> <span class="nav-text">启动数据库服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示：如果不加-dbpath-mongod-会自动使用-执行命令所属磁盘根目录-data-db-目录作为自己的数据存储路径，"><span class="nav-number">1.5.2.</span> <span class="nav-text">提示：如果不加 --dbpath, mongod 会自动使用 执行命令所属磁盘根目录/data/db 目录作为自己的数据存储路径，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行完上面的命令并成功开启-MongoDB-数据服务实例之后，就把该控制台最小化到一边就可以了，"><span class="nav-number">1.5.3.</span> <span class="nav-text">执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接数据库"><span class="nav-number">1.5.4.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示：如果提示-“无法连接主机”，请检查你的-MongoDB-数据服务实例是否开启。"><span class="nav-number">1.5.5.</span> <span class="nav-text">提示：如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB-数据存储结构"><span class="nav-number">1.6.</span> <span class="nav-text">MongoDB 数据存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作命令"><span class="nav-number">1.7.</span> <span class="nav-text">基本操作命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CRUD"><span class="nav-number">1.8.</span> <span class="nav-text">CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-MongoDB-官方提供的-mongodb-驱动包操作-MongoDB-数据库"><span class="nav-number">1.8.1.</span> <span class="nav-text">使用 MongoDB 官方提供的 mongodb 驱动包操作 MongoDB 数据库</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

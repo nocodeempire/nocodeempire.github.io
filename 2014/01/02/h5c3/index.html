@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="HTML5基本概念什么是HTML5？ HTML5并不仅仅是作为HTML标记语言的一个最新版本， 更重要的是它制定了web应用开发的一系列标准，成为第一个将web作为应用开发平台的HTML语言。  HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标 签等，可以帮助开发者开发更加丰富的应用，同时有令人眼花缭乱的css 3，还提供了一些Javascript API，如地理定位、重力感应、硬件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="h5c3">
+<meta property="og:url" content="http://yoursite.com/2014/01/02/h5c3/index.html">
+<meta property="og:site_name" content="One_Two_One">
+<meta property="og:description" content="HTML5基本概念什么是HTML5？ HTML5并不仅仅是作为HTML标记语言的一个最新版本， 更重要的是它制定了web应用开发的一系列标准，成为第一个将web作为应用开发平台的HTML语言。  HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标 签等，可以帮助开发者开发更加丰富的应用，同时有令人眼花缭乱的css 3，还提供了一些Javascript API，如地理定位、重力感应、硬件">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/html5.png">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/history.png">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/layout.png">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/tag.png">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/audio.png">
+<meta property="og:image" content="http://yoursite.com/2014/01/02/h5c3/images/video.png">
+<meta property="og:updated_time" content="2017-07-30T04:28:07.551Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="h5c3">
+<meta name="twitter:description" content="HTML5基本概念什么是HTML5？ HTML5并不仅仅是作为HTML标记语言的一个最新版本， 更重要的是它制定了web应用开发的一系列标准，成为第一个将web作为应用开发平台的HTML语言。  HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标 签等，可以帮助开发者开发更加丰富的应用，同时有令人眼花缭乱的css 3，还提供了一些Javascript API，如地理定位、重力感应、硬件">
+<meta name="twitter:image" content="http://yoursite.com/2014/01/02/h5c3/images/html5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/01/02/h5c3/"/>
+
+
+
+
+
+  <title>h5c3 | One_Two_One</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One_Two_One</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/01/02/h5c3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One_Two_One">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">h5c3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-01-02T19:21:56+08:00">
+                2014-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML5基本概念"><a href="#HTML5基本概念" class="headerlink" title="HTML5基本概念"></a>HTML5基本概念</h1><h2 id="什么是HTML5？"><a href="#什么是HTML5？" class="headerlink" title="什么是HTML5？"></a>什么是HTML5？</h2><blockquote>
+<p>HTML5并不仅仅是作为<strong><em>HTML标记语言的一个最新版本</em></strong>， 更重要的是它<strong><em>制定了web应用开发的一系列标准</em></strong>，成为第一个将web作为应用开发平台的HTML语言。</p>
+</blockquote>
+<p>HTML5定义了一系列新元素，如<strong><em>新语义标签、智能表单、多媒体标</em></strong> 签等，可以帮助开发者开发更加丰富的应用，同时有令人眼花缭乱的css 3，还提供了一些Javascript API，如地理定位、重力感应、硬件访问等，可以在浏览器内实现类原生应用，制作webApp，甚至结合Canvas我们可开发网页游戏。</p>
+<p>我们日常讨论的H5其实指的是一个泛称，它是由<strong><em>HTML5+CSS3+javascript</em></strong> 等技术组合而成的一个应用开发平台。</p>
+<p><img src="images/html5.png" alt="html5"></p>
+<p>演示：<a href="http://www.zcool.com.cn/work/ZMTg3MjExNjg=.html" target="_blank" rel="external">天猫双11，穿越宇宙的邀请函</a></p>
+<h2 id="HTML5的历史"><a href="#HTML5的历史" class="headerlink" title="HTML5的历史"></a>HTML5的历史</h2><p><img src="images/history.png" alt="HTML5的历史"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> WHATWG:Web Hypertext Application Technology Working。 WHATWG成立的原因是W3C意图放弃HTML，而力图发展XML技术。</div><div class="line"><span class="number">2.</span> HTML5 的第一份正式草案已于<span class="number">2008</span>年<span class="number">1</span>月<span class="number">22</span>日公布。</div><div class="line"><span class="number">3.</span> <span class="number">2014</span>年<span class="number">10</span>月<span class="number">29</span>日，万维网联盟宣布，经过接近<span class="number">8</span>年的艰苦努力，该标准规范终于制定完成。</div></pre></td></tr></table></figure>
+<p>思考：问什么HTML5在2008年就发布草案了，到2014年才火起来？</p>
+<p>因为移动端的推动，HTML在老的浏览器上兼容性很严重，并且HTML5很多新特性其实就是为移动端而出现的，可以说<strong><em>HTML5是为移动端而生的</em></strong> 。</p>
+<h2 id="html骨架介绍"><a href="#html骨架介绍" class="headerlink" title="html骨架介绍"></a>html骨架介绍</h2><blockquote>
+<p>html骨架说白了就是HTML的基本结构,一个标准的HTML页面，开头第一句必须是<code>&lt;!DOCTYPE&gt;</code>，HTML的版本不同，<code>&lt;!DOCTYPE&gt;</code>的写法会有所差异。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>	doctype并不是html标签，而是一个声明。</div><div class="line"><span class="number">2.</span>	doctype的作用是告诉浏览器按照哪个规则去解析页面。</div><div class="line"><span class="number">3.</span>	常见的doctype： http:<span class="comment">//www.w3school.com.cn/tags/tag_doctype.asp</span></div><div class="line"><span class="number">4.</span>  我们现在最常用H5模板如下，已经不需要指定doctype的版本了，因为这永远都代表了最新的DOCTYPE声明。</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 快捷键：!+tab 或者 html5+tab --&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="HTML5语义化标签"><a href="#HTML5语义化标签" class="headerlink" title="HTML5语义化标签"></a>HTML5语义化标签</h1><h2 id="常用语义化标签"><a href="#常用语义化标签" class="headerlink" title="常用语义化标签"></a>常用语义化标签</h2><blockquote>
+<p>在HTML5之前，我们布局大多使用div，但是div并没有语义化，HTML5推出了一系列的语义化标签，可以用来表示header、footer等。</p>
+</blockquote>
+<p>思考：我们之前如何布局？</p>
+<p><img src="images/layout.png" alt="布局"></p>
+<p>HTML5新的语义化标签</p>
+<p><img src="images/tag.png" alt="新标签"></p>
+<p>本质上新语义标签与<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>没有区别，只是其具有语义性，使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，<code>&lt;nav&gt;</code>完全可以理解成<code>&lt;div class=&quot;nav&quot;&gt;</code>。不要好奇，它只是一个标签！就是增加了语义性，更加利于SEO的优化。</p>
+<p>html5还推出了一些其他的标签：<a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="external">http://www.w3school.com.cn/tags/index.asp</a></p>
+<p>不用都去记，只需要记住这几个常用的即可。当大家在网站中如果看到了这些标签的时候，查看文档即可。</p>
+<h2 id="兼容性处理"><a href="#兼容性处理" class="headerlink" title="兼容性处理"></a>兼容性处理</h2><p>IE678不识别这个标签</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createElement(<span class="string">"header"</span>);<span class="comment">//创建这个一个标签即可</span></div><div class="line"><span class="comment">//创建的标签默认是行内样式。</span></div><div class="line"><span class="comment">//还需给标签加一个display:block的属性。</span></div></pre></td></tr></table></figure>
+<p>使用html5shiv.js</p>
+<blockquote>
+<p>我们每次都要去创建标签，并且还需要设置display：block属性，非常麻烦，因此我们可以引入一个第三方js文件，这个js文件的功能就是创建元素和设置display属性。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> lte IE <span class="number">8</span>]&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/html5shiv.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;![endif]--&gt;</div><div class="line"><span class="comment">//当ie浏览器的版本小于等于8的时候，才会引入html5shiv.js</span></div><div class="line"><span class="comment">//css骇客：</span></div><div class="line"><span class="comment">//命令：cc:ie6</span></div><div class="line"><span class="comment">//如何获取：github.com</span></div></pre></td></tr></table></figure>
+<h1 id="HTML5表单加强"><a href="#HTML5表单加强" class="headerlink" title="HTML5表单加强"></a>HTML5表单加强</h1><h2 id="新增的表单类型"><a href="#新增的表单类型" class="headerlink" title="新增的表单类型"></a>新增的表单类型</h2><blockquote>
+<p>对于input框，我们之前有text、password、radio、checkbox等类型，HTML5新增了很多的类型，具体如下：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td><code>&lt;input type=&quot;date&quot;&gt;</code></td>
+<td>日期类型</td>
+</tr>
+<tr>
+<td>time</td>
+<td><code>&lt;input type=&quot;time&quot;&gt;</code></td>
+<td>时间类型</td>
+</tr>
+<tr>
+<td>month</td>
+<td><code>&lt;input type=&quot;month&quot;&gt;</code></td>
+<td>月份类型</td>
+</tr>
+<tr>
+<td>week</td>
+<td><code>&lt;input type=&quot;week&quot;&gt;</code></td>
+<td>星期类型</td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>&lt;input type=&quot;week&quot;&gt;</code></td>
+<td>数字类型</td>
+</tr>
+<tr>
+<td>search</td>
+<td><code>&lt;input type=&quot;search&quot;&gt;</code></td>
+<td>搜索类型</td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>&lt;input type=&quot;color&quot;&gt;</code></td>
+<td>颜色类型</td>
+</tr>
+<tr>
+<td>range</td>
+<td><code>&lt;input type=&quot;range&quot;&gt;</code></td>
+<td>滑动条类型</td>
+</tr>
+</tbody>
+</table>
+<h2 id="两个事件"><a href="#两个事件" class="headerlink" title="两个事件"></a>两个事件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">oninput:当表单的值发生改变时立即出发。（HTML5新增）</div><div class="line">onchange:当表单的值发生改变并且失去焦点的时候触发。</div></pre></td></tr></table></figure>
+<h2 id="新增表单验证"><a href="#新增表单验证" class="headerlink" title="新增表单验证"></a>新增表单验证</h2><blockquote>
+<p>新增的表单验证了解即可，实际开发中用的很少，实际开发中表单验证还是会使用js进行校验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>使用示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td><code>&lt;input type=&quot;email&quot;&gt;</code></td>
+<td>email类型，在提交表单时，会验证表单的内容（只能初略的验证）</td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>&lt;input type=&quot;url&quot;&gt;</code></td>
+<td>url类型</td>
+</tr>
+<tr>
+<td>require</td>
+<td><code>&lt;input type=&quot;text&quot; require&gt;</code></td>
+<td>非空校验</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td><code>&lt;input type=&quot;text&quot; pattern=&quot;[1-9]\d{4,10}&quot;&gt;</code></td>
+<td>自定义规则</td>
+</tr>
+</tbody>
+</table>
+<p>如何自定义提示内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> qq = <span class="built_in">document</span>.getElementById(<span class="string">"qq"</span>);</div><div class="line"><span class="comment">//invalid事件：验证失败时触发的事件</span></div><div class="line"><span class="comment">//setCustomValidity:自定义提示的内容。</span></div><div class="line">qq.addEventListener(<span class="string">"invalid"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    qq.setCustomValidity(<span class="string">"亲，你输入的qq格式不对了啦"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>【使用js进行表单校验.html】</p>
+<h2 id="其他表单属性"><a href="#其他表单属性" class="headerlink" title="其他表单属性"></a>其他表单属性</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>使用示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>placeholder</td>
+<td><code>&lt;input type=&quot;text&quot; placeholder=&quot;请输入内容&quot;&gt;</code></td>
+<td>在没有输入内容的时候，会提示。</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td><code>&lt;input type=&quot;text&quot; autofocus&gt;</code></td>
+<td>界面加载时自动获得这个文本框的焦点。</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td><code>&lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; name=&quot;age&quot;&gt;</code></td>
+<td>自动补全，默认为on，值为off的时候表示关闭，一定要有name属性才生效。</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td><code>&lt;input type=&quot;file&quot; multiple&gt;</code></td>
+<td>支持多个文件上传</td>
+</tr>
+<tr>
+<td>form</td>
+<td><code>&lt;input type=&quot;text &quot; form=&quot;myForm&quot;&gt;</code></td>
+<td>配合form表单的id进行关联，让input框可以写在任意位置。</td>
+</tr>
+<tr>
+<td>list</td>
+<td><code>&lt;input type=&quot;text &quot; list=&quot;myList&quot;&gt;</code></td>
+<td>配合<code>datalist</code>使用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>&lt;datalist&gt;</code> 标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。</p>
+<p>datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。</p>
+<p>请使用 input 元素的 list 属性来绑定 datalist。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;label for="course"&gt;</div><div class="line">    课程：&lt;input type="text" list="courseList" id="course"&gt;</div><div class="line">&lt;/label&gt;</div><div class="line">&lt;datalist id="courseList"&gt;</div><div class="line">    &lt;option value="php"&gt;php&lt;/option&gt;</div><div class="line">    &lt;option value="python"&gt;python&lt;/option&gt;</div><div class="line">    &lt;option value="photoshop"&gt;photoshop&lt;/option&gt;</div><div class="line">    &lt;option value="java"&gt;java&lt;/option&gt;</div><div class="line">    &lt;option value="javascript"&gt;javascript&lt;/option&gt;</div><div class="line">    &lt;option value="front end"&gt;front end&lt;/option&gt;</div><div class="line">    &lt;option value="back end"&gt;back end&lt;/option&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
+<h1 id="HTML多媒体"><a href="#HTML多媒体" class="headerlink" title="HTML多媒体"></a>HTML多媒体</h1><blockquote>
+<p>在HTML5之前，在网页上播放音频/视频的通用方法是利用Flash来播放，但是大多情况下，并非所有用户的浏览器都安装了Flash插件，由此使得处理音频/视频播放变的非常复杂，并且移动设备的浏览器并不支持Flash插件。</p>
+</blockquote>
+<h2 id="音频标签"><a href="#音频标签" class="headerlink" title="音频标签"></a>音频标签</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// autoplay 自动播放</span></div><div class="line"><span class="comment">//controls 是否显不默认播放控件</span></div><div class="line"><span class="comment">//loop 循环播放</span></div><div class="line">&lt;audio src=<span class="string">"./music/rain.mp3"</span> controls loop autoplay&gt;<span class="xml"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的，如下图供参考</p>
+</blockquote>
+<p><img src="images/audio.png" alt="音频标签"></p>
+<p>兼容多个浏览器的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;audio controls loop autoplay&gt;</div><div class="line">    &lt;source src="./music/rain.mp3"&gt;</div><div class="line">    &lt;source src="./music/rain.ogg"&gt;</div><div class="line">    &lt;source src="./music/rain.mp3"&gt;</div><div class="line">    你的浏览器不支持音频播放，请更新你的浏览器版本</div><div class="line">&lt;/audio&gt;</div></pre></td></tr></table></figure>
+<h2 id="视频标签"><a href="#视频标签" class="headerlink" title="视频标签"></a>视频标签</h2><blockquote>
+<p>HTML5通过<code>&lt;video&gt;</code>标签来解决音频播放的问题。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// autoplay 自动播放</span></div><div class="line"><span class="comment">//controls 是否显不默认播放控件</span></div><div class="line"><span class="comment">//loop 循环播放</span></div><div class="line"><span class="comment">// poster:视频没有播放的时候的预览图片，海报</span></div><div class="line"><span class="comment">//width:设置播放窗口的宽度</span></div><div class="line"><span class="comment">//height:设置播放窗口的宽度</span></div><div class="line">&lt;video src=<span class="string">"./video/video.mp4"</span> controls loop autoplay&gt;<span class="xml"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><strong><em>注意：宽度和高度只需要设置一个，另一个会根据等比例缩放，如果同时指定两个，视频的实际宽高会以小的为基准。</em></strong> </p>
+<p>兼容性处理：</p>
+<p><img src="images/video.png" alt="视频"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;video src=<span class="string">"./video/video.mp4"</span> width=<span class="string">"1346"</span> controls loop autoplay&gt;</div><div class="line">    &lt;source src="./video/video.mp4"&gt;</div><div class="line">    &lt;source src="./video/video.ogg"&gt;</div><div class="line">    &lt;source src="./video/video.webM"&gt;</div><div class="line">    你的浏览器不支持HTML5视频</div><div class="line">&lt;/video&gt;</div></pre></td></tr></table></figure>
+<p>【视频背景的应用（LOL官网）.html】</p>
+<blockquote>
+<p>音视频常用的几个方法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//DOM对象调用</span></div><div class="line">play:控制视频播放</div><div class="line">pause：控制视频暂停</div><div class="line">load：重新载入视频</div></pre></td></tr></table></figure>
+<p>【背景音乐的播放与暂停功能.html】</p>
+<h1 id="DOM扩展（重要）"><a href="#DOM扩展（重要）" class="headerlink" title="DOM扩展（重要）"></a>DOM扩展（重要）</h1><h2 id="获取元素的新方法"><a href="#获取元素的新方法" class="headerlink" title="获取元素的新方法"></a>获取元素的新方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//根据类型查找元素，返回一个伪数组</span></div><div class="line"><span class="built_in">document</span>.getElementsByClassName(“className”)</div><div class="line"></div><div class="line"><span class="comment">//通过css选择器获取元素，返回符合要求的第一个元素,注意返回结果是对象</span></div><div class="line"><span class="built_in">document</span>.querySelector(“css选择器”)</div><div class="line"></div><div class="line"><span class="comment">//通过css选择器获取元素，返回伪数组</span></div><div class="line"><span class="built_in">document</span>.querySelectorAll(“css选择器”)</div></pre></td></tr></table></figure>
+<h2 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//添加类</span></div><div class="line">node.classList.add(“classname”);</div><div class="line"><span class="comment">//移除类</span></div><div class="line">node.classList.remove(“classname”);</div><div class="line"><span class="comment">//切换类</span></div><div class="line">node.classList.toggle(“classname”);</div><div class="line"><span class="comment">//判断类</span></div><div class="line">node.classList.contains(“classname”);</div></pre></td></tr></table></figure>
+<p>【tab栏切换案例.html】</p>
+<h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><blockquote>
+<p>在HTML5中我们可以自定义属性，其格式如下data-*=””</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"demo"</span> data-name=<span class="string">"itcast"</span> data-age=<span class="string">"10"</span> data-user-name=<span class="string">"hcc"</span>&gt;</div><div class="line"><span class="keyword">var</span> demo = <span class="built_in">document</span>.querySelector(<span class="string">'#demo'</span>);</div><div class="line"><span class="number">1</span>、读取 demo.dataset[<span class="string">'name'</span>] 或者 demo.dataset[<span class="string">'age'</span>]</div><div class="line"><span class="number">2</span>、设置demo.dataset[<span class="string">'name'</span>] = <span class="string">'web developer'</span></div><div class="line"><span class="number">3</span>、demo.dataset[<span class="string">'userName'</span>]<span class="comment">//如果-比较多，需要转换成驼峰命名法。</span></div></pre></td></tr></table></figure>
+<h2 id="进度条-了解"><a href="#进度条-了解" class="headerlink" title="进度条(了解)"></a>进度条(了解)</h2><blockquote>
+<p>进度条有很大的兼容性</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;progress value=<span class="string">"50"</span> min=<span class="string">"0"</span> max=<span class="string">"100"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span></div><div class="line">&lt;meter value=<span class="string">"30"</span> min=<span class="string">"0"</span> max=<span class="string">"100"</span> low=<span class="string">"20"</span> high=<span class="string">"80"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">meter</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>[自定义进度条.html]</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/08/04/JS/" rel="next" title="JS!">
+                <i class="fa fa-chevron-left"></i> JS!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/01/04/h5c3-3/" rel="prev" title="h5c3">
+                h5c3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Tang" />
+          <p class="site-author-name" itemprop="name">Tang</p>
+           
+              <p class="site-description motion-element" itemprop="description">不管多痛,也要咧着嘴放肆的笑</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5基本概念"><span class="nav-number">1.</span> <span class="nav-text">HTML5基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTML5？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是HTML5？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5的历史"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html骨架介绍"><span class="nav-number">1.3.</span> <span class="nav-text">html骨架介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5语义化标签"><span class="nav-number">2.</span> <span class="nav-text">HTML5语义化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语义化标签"><span class="nav-number">2.1.</span> <span class="nav-text">常用语义化标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性处理"><span class="nav-number">2.2.</span> <span class="nav-text">兼容性处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5表单加强"><span class="nav-number">3.</span> <span class="nav-text">HTML5表单加强</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增的表单类型"><span class="nav-number">3.1.</span> <span class="nav-text">新增的表单类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两个事件"><span class="nav-number">3.2.</span> <span class="nav-text">两个事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增表单验证"><span class="nav-number">3.3.</span> <span class="nav-text">新增表单验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他表单属性"><span class="nav-number">3.4.</span> <span class="nav-text">其他表单属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML多媒体"><span class="nav-number">4.</span> <span class="nav-text">HTML多媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#音频标签"><span class="nav-number">4.1.</span> <span class="nav-text">音频标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频标签"><span class="nav-number">4.2.</span> <span class="nav-text">视频标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM扩展（重要）"><span class="nav-number">5.</span> <span class="nav-text">DOM扩展（重要）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取元素的新方法"><span class="nav-number">5.1.</span> <span class="nav-text">获取元素的新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类名操作"><span class="nav-number">5.2.</span> <span class="nav-text">类名操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义属性"><span class="nav-number">5.3.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进度条-了解"><span class="nav-number">5.4.</span> <span class="nav-text">进度条(了解)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="网络状态 在移动端，我们经常需要检测设置是在线还是离线，HTML5为此定义了一个navigator.onLine属性，这个属性用于检测设备是否联网。navigator.onLine 在不同浏览器中有细微的差别。  网络状态【01.网络状态.html】123navigator.onLine返回用户当前的网络状况，是一个布尔值1. 如果浏览器连不上网(包括局域网)，就是离线状态，也就是脱机状态，会返回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="h5c3">
+<meta property="og:url" content="http://yoursite.com/2014/01/05/h5c3-5/index.html">
+<meta property="og:site_name" content="One_Two_One">
+<meta property="og:description" content="网络状态 在移动端，我们经常需要检测设置是在线还是离线，HTML5为此定义了一个navigator.onLine属性，这个属性用于检测设备是否联网。navigator.onLine 在不同浏览器中有细微的差别。  网络状态【01.网络状态.html】123navigator.onLine返回用户当前的网络状况，是一个布尔值1. 如果浏览器连不上网(包括局域网)，就是离线状态，也就是脱机状态，会返回">
+<meta property="og:image" content="http://yoursite.com/2014/01/05/h5c3-5/images/network.gif">
+<meta property="og:updated_time" content="2017-07-30T04:26:43.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="h5c3">
+<meta name="twitter:description" content="网络状态 在移动端，我们经常需要检测设置是在线还是离线，HTML5为此定义了一个navigator.onLine属性，这个属性用于检测设备是否联网。navigator.onLine 在不同浏览器中有细微的差别。  网络状态【01.网络状态.html】123navigator.onLine返回用户当前的网络状况，是一个布尔值1. 如果浏览器连不上网(包括局域网)，就是离线状态，也就是脱机状态，会返回">
+<meta name="twitter:image" content="http://yoursite.com/2014/01/05/h5c3-5/images/network.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/01/05/h5c3-5/"/>
+
+
+
+
+
+  <title>h5c3 | One_Two_One</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One_Two_One</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/01/05/h5c3-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One_Two_One">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">h5c3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-01-05T22:21:45+08:00">
+                2014-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="网络状态"><a href="#网络状态" class="headerlink" title="网络状态"></a>网络状态</h1><blockquote>
+<p>在移动端，我们经常需要检测设置是在线还是离线，HTML5为此定义了一个navigator.onLine属性，这个属性用于检测设备是否联网。<strong><em>navigator.onLine</em></strong> 在不同浏览器中有细微的差别。</p>
+</blockquote>
+<h2 id="网络状态-1"><a href="#网络状态-1" class="headerlink" title="网络状态"></a>网络状态</h2><p>【01.网络状态.html】<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">navigator.onLine返回用户当前的网络状况，是一个布尔值</div><div class="line"><span class="number">1.</span> 如果浏览器连不上网(包括局域网)，就是离线状态，也就是脱机状态，会返回<span class="literal">false</span></div><div class="line"><span class="number">2.</span> 否则就是在线状态，返回<span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<p><strong><em>注意：返回true不一定就是说一定能访问互联网，因为有可能连接的是局域网。但是返回false则表示一定连不上网。</em></strong></p>
+<h2 id="监听网络变化"><a href="#监听网络变化" class="headerlink" title="监听网络变化"></a>监听网络变化</h2><p>【02-判断网络状态.html】</p>
+<blockquote>
+<p>为了更好的确定网络是否连接，HTML5还定义了两个事件，用于监听网络状态的变化。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//网络连接时会被调用</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"online"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"online"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//网络断开时会被调用</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"offline"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"offline"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><img src="images/network.gif" alt=""></p>
+<h1 id="地理位置"><a href="#地理位置" class="headerlink" title="地理位置"></a>地理位置</h1><blockquote>
+<p>在HTML规范中，增加了获取用户地理信息的API，这样使得我们可以基于用户位置开发互联网应用，即基于位置服务LBS(Location Base Service)</p>
+</blockquote>
+<h2 id="隐私"><a href="#隐私" class="headerlink" title="隐私"></a>隐私</h2><p>HTML5规范提供了一套保护用户隐私的机制。必须先得到用户明确许可，才能获取用户的位置信息。<strong><em>在获取地理位置之前，会询问用户，只有在获得许可之后，才能获取到用户的位置信息。</em></strong> </p>
+<h2 id="相关的方法"><a href="#相关的方法" class="headerlink" title="相关的方法"></a>相关的方法</h2><p>【03-获取地理位置.html】<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//successCallback:获取成功后会调用,并返回一个position对象，里面包含了地理位置信息</span></div><div class="line"><span class="comment">//获取失败了会调用，并返回error对象，里面包含了错误信息。</span></div><div class="line"><span class="comment">//获取当前的地理位置信息</span></div><div class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback)</div><div class="line"><span class="comment">//重复的获取当前的地理位置信息</span></div><div class="line">navigator.geolocation.watchPosition(successCallback, errorCallback)</div></pre></td></tr></table></figure></p>
+<p>实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(<span class="function"><span class="keyword">function</span>(<span class="params">position</span>)</span>&#123;</div><div class="line">    <span class="comment">// 定位成功会调用该方法</span></div><div class="line">    <span class="comment">// position.coords.latitude 纬度</span></div><div class="line">    <span class="comment">// position.coords.longitude 经度</span></div><div class="line">    <span class="comment">// position.coords.accuracy 精度</span></div><div class="line">    <span class="comment">// position.coords.altitude 海拔高度</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</div><div class="line">    <span class="comment">// 定位失败会调用该方法</span></div><div class="line">    <span class="comment">// error 是错误信息</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong><em>在iOS 10中，苹果对webkit定位权限进行了修改，所有定位请求的页面必须是https协议的。</em></strong> </p>
+<h2 id="百度地图"><a href="#百度地图" class="headerlink" title="百度地图"></a>百度地图</h2><blockquote>
+<p>仅仅获取到经纬度对于用户来说意义并不大，因为用户也不知道经度和纬度表示的是地球上的哪一个地方，因为我们可以结合百度地图，准确的将用户的位置显示出来。</p>
+</blockquote>
+<p>百度地图官网：<a href="http://lbsyun.baidu.com/" target="_blank" rel="external">http://lbsyun.baidu.com/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 在开发中，找到javascript API</div><div class="line"><span class="number">2.</span> 直接查看示例demo</div><div class="line"><span class="number">3.</span> 复制相应的代码，替换掉秘钥就行，秘钥只需创建一个新的应用就可以了。</div></pre></td></tr></table></figure>
+<p>【04-百度地图的用法.html】<br>【05-百度地图(设置新的图标).html】</p>
+<h1 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h1><blockquote>
+<p>在代码执行的时候，数据都是存储在内存中的，当页面关闭或者浏览器关闭的时候，内存就被释放掉了。数据只有存储在硬盘上，才不会被释放。</p>
+</blockquote>
+<p>【01-web存储初体验.html】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//存储在内存中，会被释放</span></div><div class="line">    <span class="keyword">var</span> str = <span class="string">"hello world"</span>;</div><div class="line">    <span class="built_in">console</span>.log(str);</div><div class="line"></div><div class="line">    <span class="comment">//存储在硬盘上，不会被释放</span></div><div class="line">    localStorage.setItem(<span class="string">"name"</span>, <span class="string">"张三"</span>);</div><div class="line">    <span class="built_in">console</span>.log(localStorage.getItem(<span class="string">"name"</span>));</div></pre></td></tr></table></figure>
+<h2 id="cookie-了解"><a href="#cookie-了解" class="headerlink" title="cookie(了解)"></a>cookie(了解)</h2><blockquote>
+<p>传统方式，我们以document.cookie进行存储，但是存储起来特别麻烦，并且，存储大小只有4k，常用来做自动登录，即存储用户的账号和密码信息。每次请求都会带上cookie</p>
+</blockquote>
+<p>【02-cookie存储.html】<br>cookie是以字符串形式存在的，这个字符串有固定的格式：key=value;key1=value1;</p>
+<p>在获取cookie内容时，一般需要通过正则或者字符串的方法进行处理，转换成对象，最终得到数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=zhangsan"</span>;</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">"age=18"</span>;</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">"sex=23"</span>;</div><div class="line"></div><div class="line"><span class="comment">//读取cookie</span></div><div class="line"><span class="keyword">var</span> result = <span class="built_in">document</span>.cookie;</div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure>
+<p>使用原生js操作cookie太过麻烦，尤其是cookie的获取和删除操作，使用jquery.cookie插件，能够简化我们的操作。</p>
+<p>【03-cookie存储（jquery插件）.html】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置cookie</span></div><div class="line">$.cookie(<span class="string">"name"</span>, <span class="string">"zs"</span>);</div><div class="line"><span class="comment">//获取cookie</span></div><div class="line"><span class="built_in">console</span>.log($.cookie(<span class="string">"name"</span>));</div><div class="line"><span class="comment">//删除cookie</span></div><div class="line">$.removeCookie(<span class="string">"name"</span>);</div></pre></td></tr></table></figure>
+<p><strong>使用cookie：操作太麻烦，最多只能存储4k ,每次请求都会带上cookie，所以用户名和密码、还有sessionID会存储在cookie中</strong>   </p>
+<h2 id="sessionStorage与localStorage"><a href="#sessionStorage与localStorage" class="headerlink" title="sessionStorage与localStorage"></a>sessionStorage与localStorage</h2><blockquote>
+<p>HTML5规范提出了解决方案，使用sessionStorage和localStorage存储数据。设置、读取、删除操作很方便</p>
+</blockquote>
+<p>window.sessionStorage的特点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 声明周期为关闭浏览器窗口</div><div class="line"><span class="number">2.</span> 不能在多个窗口下共享数据。</div><div class="line"><span class="number">3.</span> 大小为<span class="number">5</span>M</div></pre></td></tr></table></figure></p>
+<p>window.localStorage的特点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 永久生效，除非手动删除</div><div class="line"><span class="number">2.</span> 可以多个窗口共享</div><div class="line"><span class="number">3.</span> 大小为<span class="number">20</span>M</div></pre></td></tr></table></figure></p>
+<p>window.sessionStorage与window.localStorage的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) <span class="comment">//设置存储内容</span></div><div class="line">getItem(key) <span class="comment">//读取存储内容</span></div><div class="line">removeItem(key) <span class="comment">//删除键值为key的存储内容</span></div><div class="line">clear() <span class="comment">//清空所有存储内容</span></div><div class="line">key(n) <span class="comment">//以索引值来获取存储内容</span></div></pre></td></tr></table></figure></p>
+<p>【04-sessionStorage与localStorage的用法.html】<br>【05-案例-换肤效果.html】</p>
+<p>面试题：请描述一下cookies，sessionStorage和localStorage的区别？</p>
+<h1 id="自定义播放器"><a href="#自定义播放器" class="headerlink" title="自定义播放器"></a>自定义播放器</h1><p>全屏切换API：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">video.requestFullScreen()</div></pre></td></tr></table></figure></p>
+<p>方法：load()、play()、pause()<br>属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">currentTime:当前时间</div><div class="line">duration：总长时间</div><div class="line">timeupdate:播放进度更改时触发</div><div class="line">volume：控制音量</div></pre></td></tr></table></figure>
+<p>参考文档<br><a href="http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp" target="_blank" rel="external">http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp</a></p>
+<p><strong><em>主要目的是练习一下video的属性和方法，还有之前我们学过的js</em></strong> </p>
+<p>推荐网站：<a href="https://www.awesomes.cn/" target="_blank" rel="external">https://www.awesomes.cn/</a></p>
+<p>video.js </p>
+<h1 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h1><blockquote>
+<p>通过FileReader对象我们可以读取本地存储的文件，可以使用 File 对象来指定所要读取的文件或数据。其中File对象可以是来自用户在一个 <input> 元素上选择文件后返回的FileList 对象，也可以来自由拖放操作生成的  DataTransfer</p>
+</blockquote>
+<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p>对于file类型的input框，在这个DOM对象中，存在一个files属性，这个属性是FileList对象，是一个伪数组，里面存储着上传的所有文件，当input框指定了multiple属性之后，就可以上传多个文件了。</p>
+<p>也就是说，通过files这个属性，我们就可以获取到所有上传的文件。</p>
+<h2 id="file对象"><a href="#file对象" class="headerlink" title="file对象"></a>file对象</h2><p>File对象中包含了文件的最后修改时间、文件名、文件类型等信息。</p>
+<h2 id="FileReader对象"><a href="#FileReader对象" class="headerlink" title="FileReader对象"></a>FileReader对象</h2><p>FileReader是一个HTML5新增的对象，用于读取文件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建一个fileReader对象</span></div><div class="line"><span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader;</div><div class="line"><span class="comment">//读取文件的两个方法</span></div><div class="line">readAsText() 以文本的方式读取文件</div><div class="line">readAsDataURL() 以DataURL形式读取文件</div><div class="line"><span class="comment">//文件读取完成事件：</span></div><div class="line">fr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="comment">//当文件读取完成，可以通过result属性获取结果</span></div><div class="line">fr.result</div></pre></td></tr></table></figure></p>
+<p>参考资料：<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#toc" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#toc</a></p>
+<p>案例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> file = <span class="built_in">document</span>.getElementById(<span class="string">"file"</span>);</div><div class="line">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</div><div class="line"></div><div class="line">    file.addEventListener(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.dir(file);</div><div class="line">        </div><div class="line">        <span class="comment">//files:里面存储了所有上传的文件</span></div><div class="line">        <span class="comment">//这个data就是我们上传的那个文件</span></div><div class="line">        <span class="keyword">var</span> data = file.files[<span class="number">0</span>]</div><div class="line">      </div><div class="line">        <span class="comment">//1. 创建一个文件读取器</span></div><div class="line">        <span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader();</div><div class="line"></div><div class="line">        <span class="comment">//2. 让文件读取器读取整个文件</span></div><div class="line">        fr.readAsDataURL(data);</div><div class="line"></div><div class="line">        <span class="comment">//3. 等待文件读取完</span></div><div class="line">        <span class="comment">//onload：文件读取完成后，就会触发</span></div><div class="line">        fr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</div><div class="line">            img.src = fr.result;</div><div class="line">            box.innerHTML = <span class="string">""</span>;</div><div class="line">            box.appendChild(img);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<h1 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h1><p>【01-拖拽初体验.html】</p>
+<p>【02-拖拽上传.html】</p>
+<p>在HTML5的规范中，我们可以通过为元素增加draggable=”true”来设置此元素是否可以进行拖拽操作，其中图片、链接默认是开启的。</p>
+<h2 id="拖拽元素"><a href="#拖拽元素" class="headerlink" title="拖拽元素"></a>拖拽元素</h2><p>页面中设置了draggable=”true”属性的元素，其中<code>&lt;img&gt;</code>、<code>&lt;a&gt;</code>标签默认是可以被拖拽的</p>
+<h2 id="目标元素"><a href="#目标元素" class="headerlink" title="目标元素"></a>目标元素</h2><p>页面中任何一个元素都可以成为目标元素</p>
+<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p>根据元素类型不同，需要设置不同的事件监听<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1、拖拽元素</span></div><div class="line">ondrag 		应用于拖拽元素，整个拖拽过程都会调用</div><div class="line">ondragstart	应用于拖拽元素，当拖拽开始时调用</div><div class="line">ondragend	应用于拖拽元素，当拖拽结束时调用</div><div class="line"><span class="comment">//2、目标元素</span></div><div class="line">ondragover	应用于目标元素，当停留在目标元素上时调用</div><div class="line">ondrop		应用于目标元素，当在目标元素上松开鼠标时调用(浏览器默认不让拖拽，需要组织dragover的默认行为。)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/01/04/h5c3-3/" rel="next" title="h5c3">
+                <i class="fa fa-chevron-left"></i> h5c3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/03/17/dom第一天/" rel="prev" title="dom1">
+                dom1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Tang" />
+          <p class="site-author-name" itemprop="name">Tang</p>
+           
+              <p class="site-description motion-element" itemprop="description">不管多痛,也要咧着嘴放肆的笑</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络状态"><span class="nav-number">1.</span> <span class="nav-text">网络状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络状态-1"><span class="nav-number">1.1.</span> <span class="nav-text">网络状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听网络变化"><span class="nav-number">1.2.</span> <span class="nav-text">监听网络变化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#地理位置"><span class="nav-number">2.</span> <span class="nav-text">地理位置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐私"><span class="nav-number">2.1.</span> <span class="nav-text">隐私</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关的方法"><span class="nav-number">2.2.</span> <span class="nav-text">相关的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度地图"><span class="nav-number">2.3.</span> <span class="nav-text">百度地图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web存储"><span class="nav-number">3.</span> <span class="nav-text">web存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-了解"><span class="nav-number">3.1.</span> <span class="nav-text">cookie(了解)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sessionStorage与localStorage"><span class="nav-number">3.2.</span> <span class="nav-text">sessionStorage与localStorage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义播放器"><span class="nav-number">4.</span> <span class="nav-text">自定义播放器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件读取"><span class="nav-number">5.</span> <span class="nav-text">文件读取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#files"><span class="nav-number">5.1.</span> <span class="nav-text">files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file对象"><span class="nav-number">5.2.</span> <span class="nav-text">file对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileReader对象"><span class="nav-number">5.3.</span> <span class="nav-text">FileReader对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拖拽"><span class="nav-number">6.</span> <span class="nav-text">拖拽</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拖拽元素"><span class="nav-number">6.1.</span> <span class="nav-text">拖拽元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标元素"><span class="nav-number">6.2.</span> <span class="nav-text">目标元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件监听"><span class="nav-number">6.3.</span> <span class="nav-text">事件监听</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
